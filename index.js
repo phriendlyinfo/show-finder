@@ -2,12 +2,12 @@ var async = require('async')
   , pnet = require('pnet');
 
 var yearRange = (function(accum, start, end){
-  for(var i = start; i < end; i++) accum.push(i);
-  return accum.concat(i);
+  for(var i = start; i <= end; i++) accum.push(i);
+  return accum;
 }([], 1983, new Date().getFullYear()));
 
 exports.find = function(options, cb) {
-  var from = normalizeDate(options.from || '1983')
+  var from = normalizeDate(options.from || 1983)
     , to = normalizeDate(options.to);
 
   if (!(isValidDate(from) || isValidDate(to))) {
@@ -34,7 +34,7 @@ function buildShowsQueryObj(from, to, apikey){
   }).reduce(function(memo, year){
     memo[year] = function(cb) {
       pnet.get('shows.query', {year: year, apikey: apikey}, function(err, _, shows){
-        cb(err, shows)
+        cb(err, shows);
       });
     }
     return memo;
