@@ -1,6 +1,6 @@
 {
     "name": "show-finder"
-  , "version": "0.0.2"
+  , "version": "0.0.3"
   , "description": "Find all Phish shows in given a date range"
   , "author": "benjreinhart"
   , "engines":
