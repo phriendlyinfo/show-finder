@@ -1,6 +1,5 @@
 var async = require('async')
-  , pnet = require('pnet')
-  , toString = {}.toString;
+  , pnet = require('pnet');
 
 var yearRange = (function(accum, start, end){
   for(var i = start; i < end; i++) accum.push(i);
