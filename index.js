@@ -112,5 +112,5 @@ function convertDateStringToDateObject(dateString){
 function olderOrEqualTo(date1, date2) {
   date1 = new Date(date1.year, date1.month - 1, date1.day);
   date2 = new Date(date2.year, date2.month - 1, date2.day);
-  return date1 < date2;
+  return date1 <= date2;
 }
